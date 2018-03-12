@@ -33,13 +33,11 @@ contract('TokenSwap', function (accounts) {
     contracts = {};
     contracts.token = await Token.new(mockTokenName, mockTokenSymbol, mockTokenDecimals, mockTokenSupply);
     contracts.tokenSwap = await TokenSwap.new(mockTokenSwapName, mockTokenSwapSymbol, mockTokenSwapDecimals, contracts.token.address, false);
-    console.log('hello');
 
     // initialize balance of 10 random users
     for (let i = 1; i < 11; i += 1) {
       await contracts.token.transfer(accounts[i], randomUserBalances[i-1]);
     }
-    console.log('hello');
 
     // accounts[1], accounts[2] and accounts[3] `approve`
     // tokenSwap to be spenders of all their balances
@@ -50,7 +48,6 @@ contract('TokenSwap', function (accounts) {
         { from: accounts[i] },
       );
     }
-    console.log('hello');
 
     // accounts[4] approves tokenSwap
     // to be spender of only some of their balance
@@ -60,7 +57,6 @@ contract('TokenSwap', function (accounts) {
       approveAmount,
       { from: accounts[4] },
     );
-    console.log('hello');
   };
 
   describe('Initialization', function () {
