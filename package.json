@@ -1,0 +1,25 @@
+{
+  "name": "contract-tools",
+  "version": "1.0.0",
+  "description": "Generic contracts",
+  "main": "truffle-config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DigixGlobal/contract-tools.git"
+  },
+  "dependencies": {
+    "@digix/core2": "0.0.10",
+    "zeppelin-solidity": "1.7.0",
+    "awaiting": "^3.0.0",
+    "ethereumjs-testrpc": "^3.9.2"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DigixGlobal/contract-tools/issues"
+  },
+  "homepage": "https://github.com/DigixGlobal/contract-tools#readme"
+}
