@@ -1,6 +1,6 @@
 pragma solidity ^0.4.19;
 
-import "@digix/core2/contracts/common/ERCTwenty.sol";
+import "zeppelin-solidity/contracts/token/ERC20/ERC20Basic.sol";
 
 contract BulkSender {
 
@@ -26,7 +26,7 @@ contract BulkSender {
   {
     uint256 length = _recipients.length;
     for (uint256 i = 0; i < length; i += 1) {
-      require(ERCTwenty(token_contract_address).transfer(_recipients[i], amounts[i]));
+      require(ERC20Basic(token_contract_address).transfer(_recipients[i], amounts[i]));
     }
     _success = true;
   }
@@ -35,8 +35,8 @@ contract BulkSender {
            if_owner()
            public
   {
-    uint256 _balance = ERCTwenty(token_contract_address).balanceOf(address(this));
-    require(ERCTwenty(token_contract_address).transfer(owner, _balance));
+    uint256 _balance = ERC20Basic(token_contract_address).balanceOf(address(this));
+    require(ERC20Basic(token_contract_address).transfer(owner, _balance));
     selfdestruct(owner);
   }
 }

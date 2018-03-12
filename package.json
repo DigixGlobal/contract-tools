@@ -11,7 +11,7 @@
     "url": "git+https://github.com/DigixGlobal/contract-tools.git"
   },
   "dependencies": {
-    "@digix/core2": "0.0.10",
+    "@digix/truffle-lightwallet-provider": "0.1.4",
     "zeppelin-solidity": "1.7.0",
     "awaiting": "^3.0.0",
     "ethereumjs-testrpc": "^3.9.2"
