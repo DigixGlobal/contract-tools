@@ -30,8 +30,8 @@ contract('BulkSender', function (accounts) {
   };
 
   describe('bulkSend', function () {
-    const randomAmounts = randomBigNumbers(2, bN(100000));
-    const randomAccounts = randomAddresses(2);
+    const randomAmounts = randomBigNumbers(bN, 3, bN(100000));
+    const randomAccounts = randomAddresses(3);
     it('[non-owner of BulkSender calls bulkSend]: throws', async function () {
       for (let i = 0; i < 20; i += 1) {
         if (i !== 1) { // accounts[1] is the owner
@@ -52,7 +52,8 @@ contract('BulkSender', function (accounts) {
       // check balances
       assert.deepEqual(await contracts.token.balanceOf.call(randomAccounts[0]), randomAmounts[0]);
       assert.deepEqual(await contracts.token.balanceOf.call(randomAccounts[1]), randomAmounts[1]);
-      assert.deepEqual(await contracts.token.balanceOf.call(bulkSenderAddress), bN(1000000).minus(randomAmounts[0]).minus(randomAmounts[1]));
+      assert.deepEqual(await contracts.token.balanceOf.call(randomAccounts[2]), randomAmounts[2]);
+      assert.deepEqual(await contracts.token.balanceOf.call(bulkSenderAddress), bN(1000000).minus(randomAmounts[0]).minus(randomAmounts[1]).minus(randomAmounts[2]));
     });
   });
 

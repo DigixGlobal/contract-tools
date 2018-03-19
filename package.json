@@ -1,5 +1,5 @@
 {
-  "name": "contract-tools",
+  "name": "@digix/contract-tools",
   "version": "1.0.0",
   "description": "Generic contracts",
   "main": "truffle-config.js",
