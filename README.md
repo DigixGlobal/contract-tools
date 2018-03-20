@@ -2,4 +2,5 @@
 
 Generic contracts
 
-[![NPM Package](https://img.shields.io/npm/v/@digix/contract-tools.svg?style=flat-square)](https://www.npmjs.com/package/@digix/contract-tools)
+[
+![npm](https://img.shields.io/badge/npm-v1.0.0-blue.svg)](https://www.npmjs.com/package/@digix/contract-tools)
